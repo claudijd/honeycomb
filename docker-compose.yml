@@ -1,0 +1,13 @@
+version: '2.3'
+services:
+  honeycomb:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 80:1234
+    networks:
+      - default
+    volumes:
+      - ./:/usr/share/honeycomb
+    restart: unless-stopped

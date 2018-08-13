@@ -11,8 +11,7 @@ RUN set -x && \
 	adduser -u 1000 -D -S -G honeycomb honeycomb
 
 # set default home and permissions
-ENV HC_HOME /usr/share/honeycomb
-RUN mkdir ${HC_HOME} && chown -vR 1000:1000 ${HC_HOME}
+RUN mkdir /usr/share/honeycomb && chown -vR 1000:1000 /usr/share/honeycomb
 
 # install honeycomb
 COPY requirements.txt /app/requirements.txt
@@ -33,4 +32,4 @@ USER 1000
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 VOLUME /usr/share/honeycomb
-CMD ["honeycomb", "--config", "${HC_HOME}/honeycomb.yml"]
+CMD ["honeycomb", "--config", "/usr/share/honeycomb/honeycomb.yml"]
