@@ -6,9 +6,6 @@ services:
       dockerfile: ./docker/mozdef_syslog/Dockerfile
     restart: always
     command: /usr/sbin/syslog-ng --no-caps -F
-    ports:
-      - 514:514/udp
-      - 514:514
     networks:
       - default
   honeycomb:
