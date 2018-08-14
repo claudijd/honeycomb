@@ -9,6 +9,6 @@ services:
 integrations:
   syslog:
     parameters:
-      address: "127.0.0.1"
-      port: 5514
+      address: syslog
+      port: 514
       protocol: tcp
