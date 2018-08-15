@@ -9,6 +9,6 @@ services:
 integrations:
   syslog:
     parameters:
-      address: syslog
+      address: ADD_SYSLOG_SERVER_HOSTNAME
       port: 514
       protocol: tcp

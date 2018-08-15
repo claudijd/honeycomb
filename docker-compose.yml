@@ -1,13 +1,5 @@
 version: '2.3'
 services:
-  syslog:
-    build:
-      context: .
-      dockerfile: ./docker/mozdef_syslog/Dockerfile
-    restart: always
-    command: /usr/sbin/syslog-ng --no-caps -F
-    networks:
-      - default
   honeycomb:
     build:
       context: .
@@ -16,10 +8,6 @@ services:
       - 80:1234
     networks:
       - default
-    links:
-      - syslog
-    depends_on:
-      - syslog
     volumes:
       - ./:/usr/share/honeycomb
     restart: unless-stopped
