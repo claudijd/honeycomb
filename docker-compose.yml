@@ -4,8 +4,15 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+    hostname: INSERT_HOSTNAME
+    domainname: INSERT_DOMAIN
     ports:
       - 80:1234
+    environment:
+      - HTTP_PROXY=INSERT_PROXY
+      - HTTPS_PROXY=INSERT_PROXY
+      - http_proxy=INSERT_PROXY
+      - https_proxy=INSERT_PROXY
     networks:
       - default
     volumes:
